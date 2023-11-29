@@ -1,24 +1,17 @@
-import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
+import Banner from "@components/HomePageComponents/banner";
+import Slider from "@components/HomePageComponents/slider";
+import Layout from "@components/layout";
+import React from "react";
 
-export default function Home() {
+const Home = () => {
   return (
-    <div className="container">
-      <Head>
-        <title>Next.js Starter!</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+    <Layout title="صفحه اصلی">
+      <Banner />
 
-      <main>
-        <Header title="Welcome to my app!" />
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-        <h1>Sadra Boromand</h1>
-      </main>
+      <Slider />
+      <Slider />
+    </Layout>
+  );
+};
 
-      <Footer />
-    </div>
-  )
-}
+export default Home;

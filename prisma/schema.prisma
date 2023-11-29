@@ -1,0 +1,28 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Category {
+  id      Int       @id @default(autoincrement())
+  title   String
+  Product Product[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  title       String
+  desc        String   @default("Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sedquia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt loret.Neque porro lorem quisquam est, qui dolorem ipsum quia dolor si. Nemo enim ipsamvoluptatem quia voluptas sit aspernatur aut odit aut loret fugit, sed quia ipsuconsequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Nullaconsequat massa quis enim.")
+  price       Decimal  @default(500.000)
+  colors      String   @default("r,g,b,bk")
+  sizes       String   @default("XS,S,M,L")
+  category    Category @relation(references: [id], fields: [category_id], onDelete: Cascade)
+  category_id Int
+}
