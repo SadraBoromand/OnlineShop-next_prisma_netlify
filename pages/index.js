@@ -36,7 +36,9 @@ const Home = () => {
             <Navbar categories={categoreis}/>
 
             {loading ? (
-                <p>Loading ...</p>
+                <div className='bg-light w-100 vh-100 d-flex justify-content-center align-items-center'>
+                    <h1>درحال بارگزاری بخش ...</h1>
+                </div>
             ) : (
                 <Header categories={categoreis}/>
             )}
@@ -46,7 +48,7 @@ const Home = () => {
                 <h2 className='display-4'>محصولات</h2>
                 <div className="row">
                     {loading ? (
-                        <p>Loading ...</p>
+                        <p>درحال بارگزاری بخش ...</p>
                     ) : (
                         products.map((item, index) => (
                             <Product key={index} title={item.title} price={item.price} colors={item.colors}/>

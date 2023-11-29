@@ -1,4 +1,4 @@
-import {getAllCategory} from '../utlis/category_api'
+import {getAllCategory} from './utlis/category_api'
 
 export default async function handler(req, res) {
     try {

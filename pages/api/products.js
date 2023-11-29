@@ -1,4 +1,4 @@
-import {getAllProducts} from "../utlis/product_api";
+import {getAllProducts} from "./utlis/product_api";
 
 export default async function handler(req, res) {
     try {
